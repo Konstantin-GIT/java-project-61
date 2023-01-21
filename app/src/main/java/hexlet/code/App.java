@@ -1,12 +1,10 @@
 package hexlet.code;
 
-import java.util.Arrays;
-import java.util.ArrayList;
-import java.util.List;
+
+import static hexlet.code.Cli.startGame;
+
 public class App {
     public static void main(String[] args) {
-        System.out.println("Welcome to the Brain Games!");
+        startGame();
     }
-
-
 }
