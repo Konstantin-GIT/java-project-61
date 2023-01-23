@@ -7,11 +7,13 @@
 
 ### Example:
 
-<a href="https://asciinema.org/a/I09GJZDu3B0kpaHjc0I4Iwj51" target="_blank"><img src="https://asciinema.org/a/iE0n1lAAVmNDzfuJyHC6ifqba.svg" /></a>
+<a href="https://asciinema.org/a/pjxuJQ8voEDB9ShVqBBjRidRb" target="_blank"><img src="https://asciinema.org/a/iE0n1lAAVmNDzfuJyHC6ifqba.svg" /></a>
 
 step 5: https://asciinema.org/a/zQJsEAbaaT2vroNH1Od6N54U2
 
 step 6: https://asciinema.org/a/LqvdNugtMOTJjk4FT53F7Yj1c
 
 step 7: https://asciinema.org/a/I09GJZDu3B0kpaHjc0I4Iwj51
+
+step 8: https://asciinema.org/a/pjxuJQ8voEDB9ShVqBBjRidRb
 
