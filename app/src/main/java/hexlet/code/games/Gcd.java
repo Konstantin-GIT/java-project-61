@@ -17,7 +17,7 @@ public class Gcd implements ConsoleGame {
     }
     public static int getGreatestCommonDivisor(Integer number1, Integer number2) {
         int greatestCommonDivisor = number1 > number2 ? number2 : number1;
-        for (int i = greatestCommonDivisor; i > 0; i--) {
+        for (int i = greatestCommonDivisor; i > 1; i--) {
             if (number1 % i == 0 && number2 % i == 0) {
                 return i;
             }
