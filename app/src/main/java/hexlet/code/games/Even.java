@@ -1,10 +1,11 @@
 package hexlet.code.games;
 
-import hexlet.code.consoleGame;
+
+import hexlet.code.ConsoleGame;
 
 import java.util.Scanner;
 
-public class Even implements consoleGame {
+public class Even implements ConsoleGame {
     public final String getRules() {
         return "Answer 'yes' if the number is even, otherwise answer 'no'.";
     }

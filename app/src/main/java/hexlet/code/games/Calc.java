@@ -1,11 +1,9 @@
 package hexlet.code.games;
 
-import hexlet.code.consoleGame;
-
-import java.util.Arrays;
+import hexlet.code.ConsoleGame;
 import java.util.Random;
 
-public class Calc implements consoleGame {
+public class Calc implements ConsoleGame {
         public final String getRules() {
             return "What is the result of the expression?";
         }
