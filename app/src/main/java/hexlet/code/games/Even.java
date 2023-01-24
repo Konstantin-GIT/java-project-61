@@ -11,7 +11,7 @@ public class Even implements ConsoleGame {
     }
     public String getQuestionAndCorrectAnswer()  {
             Integer numberForQuestion = (int) (Math.random() * 200);
-            System.out.println("Question:" + numberForQuestion);
+            System.out.println("Question: " + numberForQuestion);
             String correctAnswer = isEven(numberForQuestion) ? "yes" : "no";
             return correctAnswer;
 
