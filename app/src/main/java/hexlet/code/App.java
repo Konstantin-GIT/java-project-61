@@ -5,6 +5,7 @@ import hexlet.code.games.*;
 
 import java.util.Scanner;
 
+import static hexlet.code.Cli.startGame;
 import static hexlet.code.Engine.engine;
 
 public class App {
@@ -19,7 +20,10 @@ public class App {
                 "0 - Exit");
         Scanner scanner = new Scanner(System.in);
         String numberGame = scanner.next();
-        if (numberGame.equals("2")) {
+        if (numberGame.equals("1")) {
+            System.out.println("Your choice: " + numberGame);
+            startGame();
+        } else if (numberGame.equals("2")) {
             System.out.println("Your choice: " + numberGame);
             engine(new Even());
         } else if (numberGame.equals("3")) {
