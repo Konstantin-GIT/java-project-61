@@ -18,9 +18,9 @@ public class Gcd {
         int sizeArrayForQuestionsAndAnswers = 2;
         String[][] questionsAndAnswersOfGame = new String[numberOfRounds][sizeArrayForQuestionsAndAnswers];
         Random random = new Random();
+        int maxNumberToInterval = 100;
         int indexOfQuestion = 0;
         int indexOfCorrectAnswer = 1;
-        int maxNumberToInterval = 100;
         for (int i = 0; i < questionsAndAnswersOfGame.length; i++) {
             Integer numberOneForQuestion = random.nextInt(1, maxNumberToInterval);
             Integer numberTwoForQuestion = random.nextInt(1, maxNumberToInterval);
