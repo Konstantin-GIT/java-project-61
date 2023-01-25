@@ -1,6 +1,5 @@
 package hexlet.code.games;
 
-import hexlet.code.ConsoleGame;
 import hexlet.code.Engine;
 
 import java.util.Arrays;
@@ -12,7 +11,7 @@ public class Progression {
     final static String GAME_DESCRIPTION = "What number is missing in the progression?";
 
     public static void startProgressionGame() {
-        String[][] questionsAndAnswersOfGame = Progression.getQuestionsAndAnswersOfGame(Engine.numberOfRounds);
+        String[][] questionsAndAnswersOfGame = Progression.getQuestionsAndAnswersOfGame(Engine.NUMBER_OF_ROUNDS);
         engine(GAME_DESCRIPTION, questionsAndAnswersOfGame);
     }
 

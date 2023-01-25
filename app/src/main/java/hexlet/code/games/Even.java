@@ -1,11 +1,9 @@
 package hexlet.code.games;
 
 
-import hexlet.code.ConsoleGame;
 import hexlet.code.Engine;
 
 import java.util.Random;
-import java.util.Scanner;
 
 import static hexlet.code.Engine.engine;
 
@@ -14,7 +12,7 @@ public class Even {
     final static String GAME_DESCRIPTION = "Answer 'yes' if the number is even, otherwise answer 'no'.";
 
     public static void startEvenGame() {
-        String[][] questionsAndAnswersOfGame = Even.getQuestionsAndAnswersOfGame(Engine.numberOfRounds);
+        String[][] questionsAndAnswersOfGame = Even.getQuestionsAndAnswersOfGame(Engine.NUMBER_OF_ROUNDS);
         engine(GAME_DESCRIPTION, questionsAndAnswersOfGame);
     }
 

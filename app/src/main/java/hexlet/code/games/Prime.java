@@ -1,6 +1,5 @@
 package hexlet.code.games;
 
-import hexlet.code.ConsoleGame;
 import hexlet.code.Engine;
 
 import java.util.Random;
@@ -11,7 +10,7 @@ public class Prime {
     final static String GAME_DESCRIPTION = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
     public static void startPrimeGame() {
-        String[][] questionsAndAnswersOfGame = Prime.getQuestionsAndAnswersOfGame(Engine.numberOfRounds);
+        String[][] questionsAndAnswersOfGame = Prime.getQuestionsAndAnswersOfGame(Engine.NUMBER_OF_ROUNDS);
         engine(GAME_DESCRIPTION, questionsAndAnswersOfGame);
     }
 

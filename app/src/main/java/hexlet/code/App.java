@@ -1,10 +1,6 @@
 package hexlet.code;
 
-
-import hexlet.code.games.*;
-
 import java.util.Scanner;
-
 import static hexlet.code.Cli.startGame;
 import static hexlet.code.games.Calc.startCalcGame;
 import static hexlet.code.games.Even.startEvenGame;

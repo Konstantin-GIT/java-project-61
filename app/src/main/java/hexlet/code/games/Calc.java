@@ -1,6 +1,5 @@
 package hexlet.code.games;
 
-import hexlet.code.ConsoleGame;
 import hexlet.code.Engine;
 
 import java.util.Random;
@@ -12,7 +11,7 @@ public class Calc  {
     final static String GAME_DESCRIPTION = "What is the result of the expression?";
 
     public static void startCalcGame() {
-        String[][] questionsAndAnswersOfGame = Calc.getQuestionsAndAnswersOfGame(Engine.numberOfRounds);
+        String[][] questionsAndAnswersOfGame = Calc.getQuestionsAndAnswersOfGame(Engine.NUMBER_OF_ROUNDS);
         engine(GAME_DESCRIPTION, questionsAndAnswersOfGame);
     }
 
