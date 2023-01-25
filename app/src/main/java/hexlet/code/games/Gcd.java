@@ -8,7 +8,7 @@ import java.util.Random;
 import static hexlet.code.Engine.engine;
 
 public class Gcd {
-    final static String GAME_DESCRIPTION = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
+    final static String GAME_DESCRIPTION = "Find the greatest common divisor of given numbers.";
 
     public static void startGcdGame() {
         String[][] questionsAndAnswersOfGame = Gcd.getQuestionsAndAnswersOfGame(Engine.numberOfRounds);
