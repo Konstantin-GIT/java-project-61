@@ -9,7 +9,7 @@ import java.util.Random;
 import static hexlet.code.Engine.engine;
 
 public class Progression {
-    final static String GAME_DESCRIPTION = "Please enter the game number and press Enter.";
+    final static String GAME_DESCRIPTION = "What number is missing in the progression?";
 
     public static void startProgressionGame() {
         String[][] questionsAndAnswersOfGame = Progression.getQuestionsAndAnswersOfGame(Engine.numberOfRounds);
