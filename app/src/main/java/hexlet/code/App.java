@@ -33,7 +33,7 @@ public class App {
         } else if (numberGame.equals("3")) {
             System.out.println("Your choice: " + numberGame);
             startCalcGame();
-        } else if (numberGame.teequals("4")) {
+        } else if (numberGame.equals("4")) {
             System.out.println("Your choice: " + numberGame);
             startGcdGame();
         } else if (numberGame.equals("5")) {
