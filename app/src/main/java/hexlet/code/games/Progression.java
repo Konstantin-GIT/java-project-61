@@ -14,7 +14,7 @@ public class Progression {
     private static final int SIZE_ARRAY_FOR_QUESTIONS_AND_ANSWERS = 2;
     private static final int MAX_INITIAL_ELEMENT_OF_PROGRESSION = 10;
     private static final int MAX_VALUE_STEP_OF_PROGRESSION = 5;
-    private static final int MIN_VALUE_STEP_OF_PROGRESSION = 5;
+    private static final int MIN_VALUE_STEP_OF_PROGRESSION = 2;
 
 
     public static void startProgressionGame() {
