@@ -8,7 +8,7 @@ import static hexlet.code.Engine.engine;
 
 public class Calc  {
 
-    final static String GAME_DESCRIPTION = "What is the result of the expression?";
+    private static final String GAME_DESCRIPTION = "What is the result of the expression?";
 
     public static void startCalcGame() {
         String[][] questionsAndAnswersOfGame = Calc.getQuestionsAndAnswersOfGame(Engine.NUMBER_OF_ROUNDS);
@@ -21,12 +21,13 @@ public class Calc  {
         int indexOfQuestion = 0;
         int indexOfCorrectAnswer = 1;
         Random random = new Random();
-        for( int i = 0; i < questionsAndAnswersOfGame.length; i++) {
-            Integer numberOneForQuestion = random.nextInt(1,100);
-            Integer numberTwoForQuestion = random.nextInt(1,100);
+        int maxNumberToInterval = 100;
+        for (int i = 0; i < questionsAndAnswersOfGame.length; i++) {
+            Integer numberOneForQuestion = random.nextInt(1, maxNumberToInterval);
+            Integer numberTwoForQuestion = random.nextInt(1, maxNumberToInterval);
             String[] symbolSet = {"+", "-", "*"};
-            String symbol= symbolSet[random.nextInt(symbolSet.length)];
-            String question = questionsAndAnswersOfGame[i][indexOfQuestion] = Integer.toString(numberOneForQuestion) + " " + symbol + " " + Integer.toString(numberTwoForQuestion);
+            String symbol = symbolSet[random.nextInt(symbolSet.length)];
+            questionsAndAnswersOfGame[i][indexOfQuestion] = numberOneForQuestion + " " + symbol + " " + numberTwoForQuestion;
             String correctAnswer = "";
             switch (symbol) {
                 case "+":
@@ -38,8 +39,9 @@ public class Calc  {
                 case "*":
                     correctAnswer = Integer.toString(numberOneForQuestion * numberTwoForQuestion);
                     break;
+                default: break;
             }
-            String answer = questionsAndAnswersOfGame[i][indexOfCorrectAnswer] = correctAnswer;
+            questionsAndAnswersOfGame[i][indexOfCorrectAnswer] = correctAnswer;
         }
         return questionsAndAnswersOfGame;
     }

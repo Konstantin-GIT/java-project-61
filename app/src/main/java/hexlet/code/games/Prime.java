@@ -7,7 +7,7 @@ import java.util.Random;
 import static hexlet.code.Engine.engine;
 
 public class Prime {
-    final static String GAME_DESCRIPTION = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
+    private static final String GAME_DESCRIPTION = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
     public static void startPrimeGame() {
         String[][] questionsAndAnswersOfGame = Prime.getQuestionsAndAnswersOfGame(Engine.NUMBER_OF_ROUNDS);
@@ -19,12 +19,13 @@ public class Prime {
         String[][] questionsAndAnswersOfGame = new String[numberOfRounds][sizeArrayForQuestionsAndAnswers];
         int indexOfQuestion = 0;
         int indexOfCorrectAnswer = 1;
+        int maxNumberToInterval = 100;
         Random random = new Random();
-        for( int i = 0; i < questionsAndAnswersOfGame.length; i++) {
-            int expressionForQuestion = random.nextInt(1,100);
-            String question = questionsAndAnswersOfGame[i][indexOfQuestion] = Integer.toString(expressionForQuestion);
+        for (int i = 0; i < questionsAndAnswersOfGame.length; i++) {
+            int expressionForQuestion = random.nextInt(1, maxNumberToInterval);
+            questionsAndAnswersOfGame[i][indexOfQuestion] = Integer.toString(expressionForQuestion);
             String expressionFoAnswer = isPrime(expressionForQuestion) ? "yes" : "no";
-            String answer = questionsAndAnswersOfGame[i][indexOfCorrectAnswer] = expressionFoAnswer;
+            questionsAndAnswersOfGame[i][indexOfCorrectAnswer] = expressionFoAnswer;
         }
         return questionsAndAnswersOfGame;
     }

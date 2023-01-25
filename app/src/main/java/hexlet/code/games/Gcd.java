@@ -20,12 +20,13 @@ public class Gcd {
         Random random = new Random();
         int indexOfQuestion = 0;
         int indexOfCorrectAnswer = 1;
-        for( int i = 0; i < questionsAndAnswersOfGame.length; i++) {
-            Integer numberOneForQuestion = random.nextInt(1,100);
-            Integer numberTwoForQuestion = random.nextInt(1,100);
-            String question = questionsAndAnswersOfGame[i][indexOfQuestion] = Integer.toString(numberOneForQuestion) + " " + Integer.toString(numberTwoForQuestion);
+        int maxNumberToInterval = 100;
+        for (int i = 0; i < questionsAndAnswersOfGame.length; i++) {
+            Integer numberOneForQuestion = random.nextInt(1, maxNumberToInterval);
+            Integer numberTwoForQuestion = random.nextInt(1, maxNumberToInterval);
+            questionsAndAnswersOfGame[i][indexOfQuestion] = numberOneForQuestion + " " + numberTwoForQuestion;
             String expressionFoAnswer = Integer.toString(getGreatestCommonDivisor(numberOneForQuestion, numberTwoForQuestion));
-            String answer = questionsAndAnswersOfGame[i][indexOfCorrectAnswer] = expressionFoAnswer;
+            questionsAndAnswersOfGame[i][indexOfCorrectAnswer] = expressionFoAnswer;
         }
         return questionsAndAnswersOfGame;
     }

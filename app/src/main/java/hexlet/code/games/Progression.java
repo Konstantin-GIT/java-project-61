@@ -8,7 +8,7 @@ import java.util.Random;
 import static hexlet.code.Engine.engine;
 
 public class Progression {
-    final static String GAME_DESCRIPTION = "What number is missing in the progression?";
+    private static final String GAME_DESCRIPTION = "What number is missing in the progression?";
 
     public static void startProgressionGame() {
         String[][] questionsAndAnswersOfGame = Progression.getQuestionsAndAnswersOfGame(Engine.NUMBER_OF_ROUNDS);
@@ -21,24 +21,27 @@ public class Progression {
         Random random = new Random();
         int indexOfQuestion = 0;
         int indexOfCorrectAnswer = 1;
-        for( int i = 0; i < questionsAndAnswersOfGame.length; i++) {
+        for (int i = 0; i < questionsAndAnswersOfGame.length; i++) {
             String[] progression = getProgression();
             int lengthProgression = progression.length;
             Integer indexHiddenElement = random.nextInt(lengthProgression);
             String expressionForAnswer = progression[indexHiddenElement];
-            String answer = questionsAndAnswersOfGame[i][indexOfCorrectAnswer] = expressionForAnswer;
+            questionsAndAnswersOfGame[i][indexOfCorrectAnswer] = expressionForAnswer;
             String[]  progressionWithHiddenElement = Arrays.copyOf(progression, lengthProgression);
             progressionWithHiddenElement[indexHiddenElement] = "..";
             String progressionForPrint =  String.join(" ", progressionWithHiddenElement);
-            String question = questionsAndAnswersOfGame[i][indexOfQuestion] = progressionForPrint;
+            questionsAndAnswersOfGame[i][indexOfQuestion] = progressionForPrint;
         }
         return questionsAndAnswersOfGame;
     }
     public static String[] getProgression() {
         String[] progression = new String[10];
         Random random = new Random();
-        Integer stepForProgression = random.nextInt(2,5);
-        Integer currentElement = random.nextInt(1,10);
+        int maximumInitialElementOfProgression = 10;
+        int maximumElementOfStep = 5;
+        int minimumElementOfStep = 2;
+        Integer stepForProgression = random.nextInt(minimumElementOfStep, maximumElementOfStep);
+        Integer currentElement = random.nextInt(1, maximumInitialElementOfProgression);
         for (int i = 0; i < progression.length; i++) {
             progression[i] = currentElement.toString();
             currentElement = currentElement + stepForProgression;

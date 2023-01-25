@@ -9,7 +9,7 @@ import static hexlet.code.Engine.engine;
 
 public class Even {
 
-    final static String GAME_DESCRIPTION = "Answer 'yes' if the number is even, otherwise answer 'no'.";
+    private static final String GAME_DESCRIPTION = "Answer 'yes' if the number is even, otherwise answer 'no'.";
 
     public static void startEvenGame() {
         String[][] questionsAndAnswersOfGame = Even.getQuestionsAndAnswersOfGame(Engine.NUMBER_OF_ROUNDS);
@@ -21,12 +21,13 @@ public class Even {
         String[][] questionsAndAnswersOfGame = new String[numberOfRounds][sizeArrayForQuestionsAndAnswers];
         int indexOfQuestion = 0;
         int indexOfCorrectAnswer = 1;
+        int maxNumberToInterval = 100;
         Random random = new Random();
-        for( int i = 0; i < questionsAndAnswersOfGame.length; i++) {
-            int expressionForQuestion = random.nextInt(1,100);
-            String question = questionsAndAnswersOfGame[i][indexOfQuestion] = Integer.toString(expressionForQuestion);
+        for (int i = 0; i < questionsAndAnswersOfGame.length; i++) {
+            int expressionForQuestion = random.nextInt(1, maxNumberToInterval);
+            questionsAndAnswersOfGame[i][indexOfQuestion] = Integer.toString(expressionForQuestion);
             String expressionFoAnswer = isEven(expressionForQuestion) ? "yes" : "no";
-            String answer = questionsAndAnswersOfGame[i][indexOfCorrectAnswer] = expressionFoAnswer;
+            questionsAndAnswersOfGame[i][indexOfCorrectAnswer] = expressionFoAnswer;
         }
             return questionsAndAnswersOfGame;
     }
