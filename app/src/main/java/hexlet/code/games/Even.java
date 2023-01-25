@@ -29,7 +29,7 @@ public class Even {
             String expressionFoAnswer = isEven(expressionForQuestion) ? "yes" : "no";
             questionsAndAnswersOfGame[i][INDEX_OF_CORRECT_ANSWER] = expressionFoAnswer;
         }
-            return questionsAndAnswersOfGame;
+        return questionsAndAnswersOfGame;
     }
     private static boolean isEven(int number) {
         return number % 2 == 0;

@@ -26,7 +26,8 @@ public class Gcd {
             Integer numberOneForQuestion = random.nextInt(1, MAX_NUMBER_TO_INTERVAL);
             Integer numberTwoForQuestion = random.nextInt(1, MAX_NUMBER_TO_INTERVAL);
             questionsAndAnswersOfGame[i][INDEX_OF_QUESTION] = numberOneForQuestion + " " + numberTwoForQuestion;
-            String expressionForAnswer = getGreatestCommonDivisor(numberOneForQuestion, numberTwoForQuestion).toString();
+            String expressionForAnswer = getGreatestCommonDivisor(numberOneForQuestion,
+                    +numberTwoForQuestion).toString();
             questionsAndAnswersOfGame[i][INDEX_OF_CORRECT_ANSWER] = expressionForAnswer;
         }
         return questionsAndAnswersOfGame;

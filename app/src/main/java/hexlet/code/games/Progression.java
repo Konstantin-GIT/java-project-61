@@ -15,6 +15,7 @@ public class Progression {
     private static final int MAX_INITIAL_ELEMENT_OF_PROGRESSION = 10;
     private static final int MAX_VALUE_STEP_OF_PROGRESSION = 5;
     private static final int MIN_VALUE_STEP_OF_PROGRESSION = 2;
+    private static final int SIZE_OF_PROGRESSION = 10;
 
 
     public static void startProgressionGame() {
@@ -39,7 +40,7 @@ public class Progression {
         return questionsAndAnswersOfGame;
     }
     public static String[] getProgression() {
-        String[] progression = new String[10];
+        String[] progression = new String[SIZE_OF_PROGRESSION];
         Random random = new Random();
 
 

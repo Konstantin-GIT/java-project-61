@@ -37,7 +37,7 @@ public class App {
             startProgressionGame();
         } else if (numberGame.equals("6")) {
             System.out.println("Your choice: " + numberGame);
-             startPrimeGame();
+            startPrimeGame();
         }
     }
 }
