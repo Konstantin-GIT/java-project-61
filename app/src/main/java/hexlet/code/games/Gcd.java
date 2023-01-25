@@ -8,6 +8,10 @@ import static hexlet.code.Engine.engine;
 
 public class Gcd {
     private static final String GAME_DESCRIPTION = "Find the greatest common divisor of given numbers.";
+    private static final int INDEX_OF_QUESTION = 0;
+    private static final int INDEX_OF_CORRECT_ANSWER = 1;
+    private static final int MAX_NUMBER_TO_INTERVAL = 100;
+    private static final int SIZE_ARRAY_FOR_QUESTIONS_AND_ANSWERS = 2;
 
     public static void startGcdGame() {
         String[][] questionsAndAnswersOfGame = Gcd.getQuestionsAndAnswersOfGame(Engine.NUMBER_OF_ROUNDS);
@@ -15,18 +19,15 @@ public class Gcd {
     }
 
     public static String[][] getQuestionsAndAnswersOfGame(int numberOfRounds)  {
-        int sizeArrayForQuestionsAndAnswers = 2;
-        String[][] questionsAndAnswersOfGame = new String[numberOfRounds][sizeArrayForQuestionsAndAnswers];
+
+        String[][] questionsAndAnswersOfGame = new String[numberOfRounds][SIZE_ARRAY_FOR_QUESTIONS_AND_ANSWERS];
         Random random = new Random();
-        int maxNumberToInterval = 100;
-        int indexOfQuestion = 0;
-        int indexOfCorrectAnswer = 1;
         for (int i = 0; i < questionsAndAnswersOfGame.length; i++) {
-            Integer numberOneForQuestion = random.nextInt(1, maxNumberToInterval);
-            Integer numberTwoForQuestion = random.nextInt(1, maxNumberToInterval);
-            questionsAndAnswersOfGame[i][indexOfQuestion] = numberOneForQuestion + " " + numberTwoForQuestion;
-            String expressionFoAnswer = Integer.toString(getGreatestCommonDivisor(numberOneForQuestion, numberTwoForQuestion));
-            questionsAndAnswersOfGame[i][indexOfCorrectAnswer] = expressionFoAnswer;
+            Integer numberOneForQuestion = random.nextInt(1, MAX_NUMBER_TO_INTERVAL);
+            Integer numberTwoForQuestion = random.nextInt(1, MAX_NUMBER_TO_INTERVAL);
+            questionsAndAnswersOfGame[i][INDEX_OF_QUESTION] = numberOneForQuestion + " " + numberTwoForQuestion;
+            String expressionForAnswer = getGreatestCommonDivisor(numberOneForQuestion, numberTwoForQuestion).toString();
+            questionsAndAnswersOfGame[i][INDEX_OF_CORRECT_ANSWER] = expressionForAnswer;
         }
         return questionsAndAnswersOfGame;
     }
