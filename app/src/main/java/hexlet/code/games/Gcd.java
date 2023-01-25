@@ -22,8 +22,8 @@ public class Gcd {
         int indexOfQuestion = 0;
         int indexOfCorrectAnswer = 1;
         for( int i = 0; i < questionsAndAnswersOfGame.length; i++) {
-            Integer numberOneForQuestion = random.nextInt(100);
-            Integer numberTwoForQuestion = random.nextInt(100);
+            Integer numberOneForQuestion = random.nextInt(1,100);
+            Integer numberTwoForQuestion = random.nextInt(1,100);
             String question = questionsAndAnswersOfGame[i][indexOfQuestion] = Integer.toString(numberOneForQuestion) + " " + Integer.toString(numberTwoForQuestion);
             String expressionFoAnswer = Integer.toString(getGreatestCommonDivisor(numberOneForQuestion, numberTwoForQuestion));
             String answer = questionsAndAnswersOfGame[i][indexOfCorrectAnswer] = expressionFoAnswer;
