@@ -11,7 +11,7 @@ public class Gcd {
     final static String GAME_DESCRIPTION = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
     public static void startGcdGame() {
-        String[][] questionsAndAnswersOfGame = Prime.getQuestionsAndAnswersOfGame(Engine.numberOfRounds);
+        String[][] questionsAndAnswersOfGame = Gcd.getQuestionsAndAnswersOfGame(Engine.numberOfRounds);
         engine(GAME_DESCRIPTION, questionsAndAnswersOfGame);
     }
 
