@@ -1,25 +1,39 @@
 package hexlet.code.games;
 
 import hexlet.code.ConsoleGame;
+import hexlet.code.Engine;
 
 import java.util.Arrays;
 import java.util.Random;
 
-public class Progression implements ConsoleGame {
-    public final String getRules() {
-        return "Please enter the game number and press Enter.";
+import static hexlet.code.Engine.engine;
+
+public class Progression {
+    final static String GAME_DESCRIPTION = "Please enter the game number and press Enter.";
+
+    public static void startProgressionGame() {
+        String[][] questionsAndAnswersOfGame = Progression.getQuestionsAndAnswersOfGame(Engine.numberOfRounds);
+        engine(GAME_DESCRIPTION, questionsAndAnswersOfGame);
     }
-    public String getQuestionAndCorrectAnswer()  {
-        String[] progression = getProgression();
-        int lengthProgression = progression.length;
+
+    public static String[][] getQuestionsAndAnswersOfGame(int numberOfRounds)  {
+        int sizeArrayForQuestionsAndAnswers = 2;
+        String[][] questionsAndAnswersOfGame = new String[numberOfRounds][sizeArrayForQuestionsAndAnswers];
         Random random = new Random();
-        Integer indexHiddenElement = random.nextInt(lengthProgression);
-        String correctAnswer = progression[indexHiddenElement];
-        String[]  progressionWithHiddenElement = Arrays.copyOf(progression, lengthProgression);
-        progressionWithHiddenElement[indexHiddenElement] = "..";
-        String progressionForPrint =  String.join(" ", progressionWithHiddenElement);
-        System.out.println("Question: " + progressionForPrint);
-        return correctAnswer;
+        int indexOfQuestion = 0;
+        int indexOfCorrectAnswer = 1;
+        for( int i = 0; i < questionsAndAnswersOfGame.length; i++) {
+            String[] progression = getProgression();
+            int lengthProgression = progression.length;
+            Integer indexHiddenElement = random.nextInt(lengthProgression);
+            String expressionForAnswer = progression[indexHiddenElement];
+            String answer = questionsAndAnswersOfGame[i][indexOfCorrectAnswer] = expressionForAnswer;
+            String[]  progressionWithHiddenElement = Arrays.copyOf(progression, lengthProgression);
+            progressionWithHiddenElement[indexHiddenElement] = "..";
+            String progressionForPrint =  String.join(" ", progressionWithHiddenElement);
+            String question = questionsAndAnswersOfGame[i][indexOfQuestion] = progressionForPrint;
+        }
+        return questionsAndAnswersOfGame;
     }
     public static String[] getProgression() {
         String[] progression = new String[10];

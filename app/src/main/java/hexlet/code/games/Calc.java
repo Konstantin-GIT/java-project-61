@@ -19,14 +19,15 @@ public class Calc  {
     public static String[][] getQuestionsAndAnswersOfGame(int numberOfRounds)  {
         int sizeArrayForQuestionsAndAnswers = 2;
         String[][] questionsAndAnswersOfGame = new String[numberOfRounds][sizeArrayForQuestionsAndAnswers];
-
+        int indexOfQuestion = 0;
+        int indexOfCorrectAnswer = 1;
+        Random random = new Random();
         for( int i = 0; i < questionsAndAnswersOfGame.length; i++) {
-            Random random = new Random();
             Integer numberOneForQuestion = random.nextInt(1,100);
             Integer numberTwoForQuestion = random.nextInt(1,100);
             String[] symbolSet = {"+", "-", "*"};
             String symbol= symbolSet[random.nextInt(symbolSet.length)];
-            String question = questionsAndAnswersOfGame[i][0] = Integer.toString(numberOneForQuestion) + " " + symbol + " " + Integer.toString(numberTwoForQuestion);
+            String question = questionsAndAnswersOfGame[i][indexOfQuestion] = Integer.toString(numberOneForQuestion) + " " + symbol + " " + Integer.toString(numberTwoForQuestion);
             String correctAnswer = "";
             switch (symbol) {
                 case "+":
@@ -39,7 +40,7 @@ public class Calc  {
                     correctAnswer = Integer.toString(numberOneForQuestion * numberTwoForQuestion);
                     break;
             }
-            String answer = questionsAndAnswersOfGame[i][1] = correctAnswer;
+            String answer = questionsAndAnswersOfGame[i][indexOfCorrectAnswer] = correctAnswer;
         }
         return questionsAndAnswersOfGame;
     }

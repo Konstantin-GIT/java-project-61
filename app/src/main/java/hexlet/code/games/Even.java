@@ -21,13 +21,14 @@ public class Even {
     public static String[][] getQuestionsAndAnswersOfGame(int numberOfRounds)  {
         int sizeArrayForQuestionsAndAnswers = 2;
         String[][] questionsAndAnswersOfGame = new String[numberOfRounds][sizeArrayForQuestionsAndAnswers];
-
+        int indexOfQuestion = 0;
+        int indexOfCorrectAnswer = 1;
+        Random random = new Random();
         for( int i = 0; i < questionsAndAnswersOfGame.length; i++) {
-            Random random = new Random();
             int expressionForQuestion = random.nextInt(1,100);
-            String question = questionsAndAnswersOfGame[i][0] = Integer.toString(expressionForQuestion);
+            String question = questionsAndAnswersOfGame[i][indexOfQuestion] = Integer.toString(expressionForQuestion);
             String expressionFoAnswer = isEven(expressionForQuestion) ? "yes" : "no";
-            String answer = questionsAndAnswersOfGame[i][1] = expressionFoAnswer;
+            String answer = questionsAndAnswersOfGame[i][indexOfCorrectAnswer] = expressionFoAnswer;
         }
             return questionsAndAnswersOfGame;
     }

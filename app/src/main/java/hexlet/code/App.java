@@ -8,6 +8,9 @@ import java.util.Scanner;
 import static hexlet.code.Cli.startGame;
 import static hexlet.code.games.Calc.startCalcGame;
 import static hexlet.code.games.Even.startEvenGame;
+import static hexlet.code.games.Prime.startPrimeGame;
+import static hexlet.code.games.Gcd.startGcdGame;
+import static hexlet.code.games.Progression.startProgressionGame;
 
 public class App {
     public static void main(String[] args) {
@@ -30,15 +33,15 @@ public class App {
         } else if (numberGame.equals("3")) {
             System.out.println("Your choice: " + numberGame);
             startCalcGame();
-        } /* else if (numberGame.equals("4")) {
+        } else if (numberGame.teequals("4")) {
             System.out.println("Your choice: " + numberGame);
-            engine(new Gcd());
+            startGcdGame();
         } else if (numberGame.equals("5")) {
             System.out.println("Your choice: " + numberGame);
-            engine(new Progression());
+            startProgressionGame();
         } else if (numberGame.equals("6")) {
             System.out.println("Your choice: " + numberGame);
-            engine(new Prime());
-        }  */
+             startPrimeGame();
+        }
     }
 }
