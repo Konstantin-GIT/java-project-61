@@ -26,7 +26,7 @@ public class Progression {
 
 
     public static void startProgressionGame() {
-        String[][] questionsAndAnswersOfGame = Progression.getQuestionsAndAnswersOfGame(Engine.NUMBER_OF_ROUNDS);
+        String[][] questionsAndAnswersOfGame = getQuestionsAndAnswersOfGame(Engine.NUMBER_OF_ROUNDS);
         engine(GAME_DESCRIPTION, questionsAndAnswersOfGame);
     }
 

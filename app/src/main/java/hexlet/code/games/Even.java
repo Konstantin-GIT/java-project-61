@@ -21,7 +21,7 @@ public class Even {
 
 
     public static void startEvenGame() {
-        String[][] questionsAndAnswersOfGame = Even.getQuestionsAndAnswersOfGame(Engine.NUMBER_OF_ROUNDS);
+        String[][] questionsAndAnswersOfGame = getQuestionsAndAnswersOfGame(Engine.NUMBER_OF_ROUNDS);
         engine(GAME_DESCRIPTION, questionsAndAnswersOfGame);
     }
 

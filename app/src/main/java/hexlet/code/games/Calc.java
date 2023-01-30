@@ -19,7 +19,7 @@ public class Calc  {
     private static final int SIZE_ARRAY_FOR_QUESTIONS_AND_ANSWERS = 2;
 
     public static void startCalcGame() {
-        String[][] questionsAndAnswersOfGame = Calc.getQuestionsAndAnswersOfGame(Engine.NUMBER_OF_ROUNDS);
+        String[][] questionsAndAnswersOfGame = getQuestionsAndAnswersOfGame(Engine.NUMBER_OF_ROUNDS);
         engine(GAME_DESCRIPTION, questionsAndAnswersOfGame);
     }
 
