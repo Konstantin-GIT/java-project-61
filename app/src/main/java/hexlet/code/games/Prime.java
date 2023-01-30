@@ -35,11 +35,22 @@ public class Prime {
         return questionsAndAnswersOfGame;
     }
     public static boolean isPrime(int number) {
+        for (int i = 2; i < number; i++)
+        {
+            if (number % i == 0)
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    /*{
         for (int i = number / 2; i > 1; i--) {
             if (number % i == 0) {
                 return false;
             }
         }
         return true;
-    }
+    } */
 }
