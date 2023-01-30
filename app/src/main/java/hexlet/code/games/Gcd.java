@@ -29,17 +29,22 @@ public class Gcd {
         for (int i = 0; i < questionsAndAnswersOfGame.length; i++) {
             int numberOneForQuestion = random.nextInt(1, MAX_NUMBER_TO_INTERVAL);
             int numberTwoForQuestion = random.nextInt(1, MAX_NUMBER_TO_INTERVAL);
-            questionsAndAnswersOfGame[i][INDEX_OF_QUESTION] = numberOneForQuestion + " " + numberTwoForQuestion;
-            String expressionForAnswer = Integer.toString(getGreatestCommonDivisor(numberOneForQuestion,
-                    +numberTwoForQuestion));
-            questionsAndAnswersOfGame[i][INDEX_OF_CORRECT_ANSWER] = expressionForAnswer;
+            questionsAndAnswersOfGame[i] = generateRoundData(numberOneForQuestion, numberTwoForQuestion);
         }
         return questionsAndAnswersOfGame;
     }
-    public static int getGreatestCommonDivisor(int number1, int number2) {
-        int greatestCommonDivisor = number1 > number2 ? number2 : number1;
 
-        for (int i = greatestCommonDivisor; i > 1; i--) {
+    private static String[] generateRoundData(int number1, int number2) {
+        String[] questionAndAnswerOfGame = new String[SIZE_ARRAY_FOR_QUESTIONS_AND_ANSWERS];
+        questionAndAnswerOfGame[INDEX_OF_QUESTION] = number1 + " " + number2;
+        questionAndAnswerOfGame[INDEX_OF_CORRECT_ANSWER] = Integer.toString(getGreatestCommonDivisor(number1, number2));
+        return questionAndAnswerOfGame;
+    }
+
+    public static int getGreatestCommonDivisor(int number1, int number2) {
+        int startingValueGreatestCommonDivisor = number1 > number2 ? number2 : number1;
+
+        for (int i = startingValueGreatestCommonDivisor; i > 1; i--) {
             if (number1 % i == 0 && number2 % i == 0) {
                 return i;
             }
