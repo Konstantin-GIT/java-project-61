@@ -1,5 +1,7 @@
 package hexlet.code;
 
+import hexlet.code.games.Calc;
+
 import java.util.Scanner;
 import static hexlet.code.Cli.greet;
 import static hexlet.code.games.Calc.startCalcGame;
@@ -33,7 +35,11 @@ public class App {
                 break;
             case "3":
                 System.out.println("Your choice: " + numberGame);
-                startCalcGame();
+                try {
+                    startCalcGame();
+                } catch (Calc.IncorrectOperationOfMethodExeption e) {
+                    System.out.println("Start the game again, incorrect execution of the Calculate method");
+                }
                 break;
             case "4":
                 System.out.println("Your choice: " + numberGame);
@@ -47,8 +53,11 @@ public class App {
                 System.out.println("Your choice: " + numberGame);
                 startPrimeGame();
                 break;
+            case "0":
+                break;
             default:
-                throw new Error("Incorrect character when entering the game numbers");
+                System.out.println("Incorrect value of the game number has been entered");
+                break;
         }
     }
 }
