@@ -25,17 +25,22 @@ public class Even {
         engine(GAME_DESCRIPTION, questionsAndAnswersOfGame);
     }
 
-    public static String[][] getQuestionsAndAnswersOfGame(int numberOfRounds)  {
+    public static String[][] getQuestionsAndAnswersOfGame(int numberOfRounds) {
         String[][] questionsAndAnswersOfGame = new String[numberOfRounds][SIZE_ARRAY_FOR_QUESTIONS_AND_ANSWERS];
         Random random = new Random();
 
         for (int i = 0; i < questionsAndAnswersOfGame.length; i++) {
             int expressionForQuestion = random.nextInt(1, MAX_NUMBER_TO_INTERVAL);
-            questionsAndAnswersOfGame[i][INDEX_OF_QUESTION] = Integer.toString(expressionForQuestion);
-            String expressionFoAnswer = isEven(expressionForQuestion) ? "yes" : "no";
-            questionsAndAnswersOfGame[i][INDEX_OF_CORRECT_ANSWER] = expressionFoAnswer;
+            questionsAndAnswersOfGame[i] = generateRoundData(expressionForQuestion);
         }
         return questionsAndAnswersOfGame;
+    }
+
+    private static String[] generateRoundData(int number) {
+        String[] questionAndAnswerOfGame = new String[SIZE_ARRAY_FOR_QUESTIONS_AND_ANSWERS];
+        questionAndAnswerOfGame[INDEX_OF_QUESTION] = Integer.toString(number);
+        questionAndAnswerOfGame[INDEX_OF_CORRECT_ANSWER] = isEven(number) ? "yes" : "no";
+        return questionAndAnswerOfGame;
     }
 
     private static boolean isEven(int number) {

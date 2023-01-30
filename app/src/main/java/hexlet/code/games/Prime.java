@@ -44,13 +44,4 @@ public class Prime {
         }
         return true;
     }
-
-    /*{
-        for (int i = number / 2; i > 1; i--) {
-            if (number % i == 0) {
-                return false;
-            }
-        }
-        return true;
-    } */
 }
