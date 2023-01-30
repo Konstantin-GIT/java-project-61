@@ -37,7 +37,7 @@ public class App {
                 System.out.println("Your choice: " + numberGame);
                 try {
                     startCalcGame();
-                } catch (Calc.IncorrectOperationOfMethodExeption e) {
+                } catch (Calc.IncorrectOperationOfMethodException e) {
                     System.out.println("Start the game again, incorrect execution of the Calculate method");
                 }
                 break;

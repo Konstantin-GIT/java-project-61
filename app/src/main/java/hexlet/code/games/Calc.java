@@ -17,13 +17,13 @@ public class Calc  {
 
     private static final int SIZE_ARRAY_FOR_QUESTIONS_AND_ANSWERS = 2;
 
-    public static void startCalcGame() throws IncorrectOperationOfMethodExeption {
+    public static void startCalcGame() throws IncorrectOperationOfMethodException {
         String[][] questionsAndAnswersOfGame = getQuestionsAndAnswersOfGame(Engine.NUMBER_OF_ROUNDS);
         engine(GAME_DESCRIPTION, questionsAndAnswersOfGame);
     }
 
     public static String[][] getQuestionsAndAnswersOfGame(int numberOfRounds)
-            throws IncorrectOperationOfMethodExeption {
+            throws IncorrectOperationOfMethodException {
         String[][] questionsAndAnswersOfGame = new String[numberOfRounds][SIZE_ARRAY_FOR_QUESTIONS_AND_ANSWERS];
         Random random = new Random();
         String[] symbolSet = {"+", "-", "*"};
@@ -38,7 +38,7 @@ public class Calc  {
     }
 
     private static String[] generateRoundData(int number1, int number2, String symbol)
-            throws IncorrectOperationOfMethodExeption {
+            throws IncorrectOperationOfMethodException {
         String[] questionAndAnswerOfGame = new String[SIZE_ARRAY_FOR_QUESTIONS_AND_ANSWERS];
         questionAndAnswerOfGame[INDEX_OF_QUESTION] = number1 + " " + symbol + " " + number2;
         String correctAnswer = Integer.toString(calculate(number1, number2, symbol));
@@ -47,7 +47,7 @@ public class Calc  {
     }
 
     private static int calculate(int number1, int number2, String arithmeticOperator)
-            throws IncorrectOperationOfMethodExeption {
+            throws IncorrectOperationOfMethodException {
         switch (arithmeticOperator) {
             case "+":
                 return number1 + number2;
@@ -56,13 +56,13 @@ public class Calc  {
             case "*":
                 return number1 * number2;
             default:
-                throw new IncorrectOperationOfMethodExeption("Incorrect input parameters of the method");
+                throw new IncorrectOperationOfMethodException("Incorrect input parameters of the method");
         }
     }
 
-    public static class IncorrectOperationOfMethodExeption extends Exception {
+    public static class IncorrectOperationOfMethodException extends Exception {
 
-        public IncorrectOperationOfMethodExeption(String message) {
+        public IncorrectOperationOfMethodException(String message) {
             super(message);
         }
     }
