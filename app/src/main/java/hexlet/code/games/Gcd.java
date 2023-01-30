@@ -27,16 +27,16 @@ public class Gcd {
         Random random = new Random();
 
         for (int i = 0; i < questionsAndAnswersOfGame.length; i++) {
-            Integer numberOneForQuestion = random.nextInt(1, MAX_NUMBER_TO_INTERVAL);
-            Integer numberTwoForQuestion = random.nextInt(1, MAX_NUMBER_TO_INTERVAL);
+            int numberOneForQuestion = random.nextInt(1, MAX_NUMBER_TO_INTERVAL);
+            int numberTwoForQuestion = random.nextInt(1, MAX_NUMBER_TO_INTERVAL);
             questionsAndAnswersOfGame[i][INDEX_OF_QUESTION] = numberOneForQuestion + " " + numberTwoForQuestion;
-            String expressionForAnswer = getGreatestCommonDivisor(numberOneForQuestion,
-                    +numberTwoForQuestion).toString();
+            String expressionForAnswer = Integer.toString(getGreatestCommonDivisor(numberOneForQuestion,
+                    +numberTwoForQuestion));
             questionsAndAnswersOfGame[i][INDEX_OF_CORRECT_ANSWER] = expressionForAnswer;
         }
         return questionsAndAnswersOfGame;
     }
-    public static Integer getGreatestCommonDivisor(Integer number1, Integer number2) {
+    public static int getGreatestCommonDivisor(int number1, int number2) {
         int greatestCommonDivisor = number1 > number2 ? number2 : number1;
 
         for (int i = greatestCommonDivisor; i > 1; i--) {

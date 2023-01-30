@@ -48,7 +48,7 @@ public class App {
                 startPrimeGame();
                 break;
             default:
-                break;
+                throw new Error("Incorrect character when entering the game numbers");
         }
     }
 }
