@@ -20,24 +20,33 @@ public class App {
                 + "0 - Exit");
         Scanner scanner = new Scanner(System.in);
         String numberGame = scanner.next();
-        if (numberGame.equals("1")) {
-            System.out.println("Your choice: " + numberGame);
-            startGame();
-        } else if (numberGame.equals("2")) {
-            System.out.println("Your choice: " + numberGame);
-            startEvenGame();
-        } else if (numberGame.equals("3")) {
-            System.out.println("Your choice: " + numberGame);
-            startCalcGame();
-        } else if (numberGame.equals("4")) {
-            System.out.println("Your choice: " + numberGame);
-            startGcdGame();
-        } else if (numberGame.equals("5")) {
-            System.out.println("Your choice: " + numberGame);
-            startProgressionGame();
-        } else if (numberGame.equals("6")) {
-            System.out.println("Your choice: " + numberGame);
-            startPrimeGame();
+        switch (numberGame) {
+            case "1":
+                System.out.println("Your choice: " + numberGame);
+                startGame();
+                break;
+            case "2":
+                System.out.println("Your choice: " + numberGame);
+                startEvenGame();
+                break;
+            case "3":
+                System.out.println("Your choice: " + numberGame);
+                startCalcGame();
+                break;
+            case "4":
+                System.out.println("Your choice: " + numberGame);
+                startGcdGame();
+                break;
+            case "5":
+                System.out.println("Your choice: " + numberGame);
+                startProgressionGame();
+                break;
+            case "6":
+                System.out.println("Your choice: " + numberGame);
+                startPrimeGame();
+                break;
+            default:
+                break;
         }
     }
 }
