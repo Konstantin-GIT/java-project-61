@@ -28,12 +28,18 @@ public class Prime {
 
         for (int i = 0; i < questionsAndAnswersOfGame.length; i++) {
             int expressionForQuestion = random.nextInt(1, MAX_NUMBER_TO_INTERVAL);
-            questionsAndAnswersOfGame[i][INDEX_OF_QUESTION] = Integer.toString(expressionForQuestion);
-            String expressionForAnswer = isPrime(expressionForQuestion) ? "yes" : "no";
-            questionsAndAnswersOfGame[i][INDEX_OF_CORRECT_ANSWER] = expressionForAnswer;
+            questionsAndAnswersOfGame[i] = generateRoundData(expressionForQuestion);
         }
         return questionsAndAnswersOfGame;
     }
+
+    private static String[] generateRoundData(int number) {
+        String[] questionAndAnswerOfGame = new String[SIZE_ARRAY_FOR_QUESTIONS_AND_ANSWERS];
+        questionAndAnswerOfGame[INDEX_OF_QUESTION] = Integer.toString(number);
+        questionAndAnswerOfGame[INDEX_OF_CORRECT_ANSWER] = isPrime(number) ? "yes" : "no";;
+        return questionAndAnswerOfGame;
+    }
+
     public static boolean isPrime(int number) {
         for (int i = 2; i < number; i++)
         {
