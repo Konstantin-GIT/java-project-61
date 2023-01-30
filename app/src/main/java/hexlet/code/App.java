@@ -9,6 +9,7 @@ import static hexlet.code.games.Gcd.startGcdGame;
 import static hexlet.code.games.Progression.startProgressionGame;
 
 public class App {
+
     public static void main(String[] args) {
         System.out.println("Please enter the game number and press Enter.\n"
                 + "1 - Greet\n"
@@ -20,6 +21,7 @@ public class App {
                 + "0 - Exit");
         Scanner scanner = new Scanner(System.in);
         String numberGame = scanner.next();
+
         switch (numberGame) {
             case "1":
                 System.out.println("Your choice: " + numberGame);
