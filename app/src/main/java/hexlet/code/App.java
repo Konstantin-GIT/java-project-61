@@ -1,7 +1,7 @@
 package hexlet.code;
 
 import java.util.Scanner;
-import static hexlet.code.Cli.startGame;
+import static hexlet.code.Cli.greet;
 import static hexlet.code.games.Calc.startCalcGame;
 import static hexlet.code.games.Even.startEvenGame;
 import static hexlet.code.games.Prime.startPrimeGame;
@@ -23,7 +23,7 @@ public class App {
         switch (numberGame) {
             case "1":
                 System.out.println("Your choice: " + numberGame);
-                startGame();
+                greet();
                 break;
             case "2":
                 System.out.println("Your choice: " + numberGame);
