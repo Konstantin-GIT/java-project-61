@@ -35,28 +35,30 @@ public class Progression {
         Random random = new Random();
 
         for (int i = 0; i < questionsAndAnswersOfGame.length; i++) {
-            String[] progression = getProgression();
-            int lengthProgression = progression.length;
-            int indexHiddenElement = random.nextInt(lengthProgression);
-            String expressionForAnswer = progression[indexHiddenElement];
-            questionsAndAnswersOfGame[i][INDEX_OF_CORRECT_ANSWER] = expressionForAnswer;
-            String[] progressionWithHiddenElement = Arrays.copyOf(progression, lengthProgression);
-            progressionWithHiddenElement[indexHiddenElement] = "..";
-            String progressionForPrint =  String.join(" ", progressionWithHiddenElement);
-            questionsAndAnswersOfGame[i][INDEX_OF_QUESTION] = progressionForPrint;
+            int indexHiddenElement = random.nextInt(SIZE_OF_PROGRESSION);
+            int stepProgression = random.nextInt(MIN_VALUE_STEP_OF_PROGRESSION, MAX_VALUE_STEP_OF_PROGRESSION);
+            int firstNumberProgression = random.nextInt(1, MAX_INITIAL_ELEMENT_OF_PROGRESSION);
+            String[] progression = getProgression(firstNumberProgression, stepProgression, SIZE_OF_PROGRESSION);
+            questionsAndAnswersOfGame[i] = generateRoundData(progression, indexHiddenElement);
         }
         return questionsAndAnswersOfGame;
     }
 
-    public static String[] getProgression() {
-        String[] progression = new String[SIZE_OF_PROGRESSION];
-        Random random = new Random();
-        int stepForProgression = random.nextInt(MIN_VALUE_STEP_OF_PROGRESSION, MAX_VALUE_STEP_OF_PROGRESSION);
-        int currentElement = random.nextInt(1, MAX_INITIAL_ELEMENT_OF_PROGRESSION);
+    private static String[] generateRoundData(String[] progression, int indexHiddenElement) {
+        String[] questionAndAnswerOfGame = new String[SIZE_ARRAY_FOR_QUESTIONS_AND_ANSWERS];
+        questionAndAnswerOfGame[INDEX_OF_CORRECT_ANSWER] = progression[indexHiddenElement];
+        String[] progressionWithHiddenElement = Arrays.copyOf(progression, progression.length);
+        progressionWithHiddenElement[indexHiddenElement] = "..";
+        questionAndAnswerOfGame[INDEX_OF_QUESTION] = String.join(" ", progressionWithHiddenElement);
+        return questionAndAnswerOfGame;
+    }
 
-        for (int i = 0; i < progression.length; i++) {
+    public static String[] getProgression(int firstNumberProgression, int stepProgression, int lengthProgression) {
+        String[] progression = new String[lengthProgression];
+        int currentElement = firstNumberProgression;
+        for (int i = 0; i < lengthProgression; i++) {
             progression[i] = Integer.toString(currentElement);
-            currentElement = currentElement + stepForProgression;
+            currentElement = currentElement + stepProgression;
         }
         return progression;
     }

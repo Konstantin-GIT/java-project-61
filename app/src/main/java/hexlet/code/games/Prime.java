@@ -22,7 +22,7 @@ public class Prime {
         engine(GAME_DESCRIPTION, questionsAndAnswersOfGame);
     }
 
-    public static String[][] getQuestionsAndAnswersOfGame(int numberOfRounds)  {
+    public static String[][] getQuestionsAndAnswersOfGame(int numberOfRounds) {
         String[][] questionsAndAnswersOfGame = new String[numberOfRounds][SIZE_ARRAY_FOR_QUESTIONS_AND_ANSWERS];
         Random random = new Random();
 
@@ -36,15 +36,13 @@ public class Prime {
     private static String[] generateRoundData(int number) {
         String[] questionAndAnswerOfGame = new String[SIZE_ARRAY_FOR_QUESTIONS_AND_ANSWERS];
         questionAndAnswerOfGame[INDEX_OF_QUESTION] = Integer.toString(number);
-        questionAndAnswerOfGame[INDEX_OF_CORRECT_ANSWER] = isPrime(number) ? "yes" : "no";;
+        questionAndAnswerOfGame[INDEX_OF_CORRECT_ANSWER] = isPrime(number) ? "yes" : "no";
         return questionAndAnswerOfGame;
     }
 
     public static boolean isPrime(int number) {
-        for (int i = 2; i < number; i++)
-        {
-            if (number % i == 0)
-            {
+        for (int i = 2; i < number; i++) {
+            if (number % i == 0) {
                 return false;
             }
         }

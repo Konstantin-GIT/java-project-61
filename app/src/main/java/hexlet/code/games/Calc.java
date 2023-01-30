@@ -1,8 +1,6 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
-
-import java.io.IOException;
 import java.util.Random;
 
 import static hexlet.code.Engine.engine;
@@ -24,7 +22,8 @@ public class Calc  {
         engine(GAME_DESCRIPTION, questionsAndAnswersOfGame);
     }
 
-    public static String[][] getQuestionsAndAnswersOfGame(int numberOfRounds) throws IncorrectOperationOfMethodExeption {
+    public static String[][] getQuestionsAndAnswersOfGame(int numberOfRounds)
+            throws IncorrectOperationOfMethodExeption {
         String[][] questionsAndAnswersOfGame = new String[numberOfRounds][SIZE_ARRAY_FOR_QUESTIONS_AND_ANSWERS];
         Random random = new Random();
         String[] symbolSet = {"+", "-", "*"};
@@ -38,7 +37,8 @@ public class Calc  {
         return questionsAndAnswersOfGame;
     }
 
-    private static String[] generateRoundData(int number1, int number2, String symbol) throws IncorrectOperationOfMethodExeption {
+    private static String[] generateRoundData(int number1, int number2, String symbol)
+            throws IncorrectOperationOfMethodExeption {
         String[] questionAndAnswerOfGame = new String[SIZE_ARRAY_FOR_QUESTIONS_AND_ANSWERS];
         questionAndAnswerOfGame[INDEX_OF_QUESTION] = number1 + " " + symbol + " " + number2;
         String correctAnswer = Integer.toString(calculate(number1, number2, symbol));
@@ -46,7 +46,8 @@ public class Calc  {
         return questionAndAnswerOfGame;
     }
 
-    private static int calculate(int number1, int number2, String arithmeticOperator) throws IncorrectOperationOfMethodExeption {
+    private static int calculate(int number1, int number2, String arithmeticOperator)
+            throws IncorrectOperationOfMethodExeption {
         switch (arithmeticOperator) {
             case "+":
                 return number1 + number2;
