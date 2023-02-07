@@ -1,7 +1,5 @@
 package hexlet.code;
 
-import hexlet.code.games.Calc;
-
 import java.util.Scanner;
 import static hexlet.code.Cli.greet;
 import static hexlet.code.games.Calc.startCalcGame;
@@ -37,7 +35,7 @@ public class App {
                 System.out.println("Your choice: " + numberGame);
                 try {
                     startCalcGame();
-                } catch (Calc.IncorrectOperationOfMethodException e) {
+                } catch (RuntimeException e) {
                     System.out.println("Start the game again, incorrect execution of the Calculate method");
                 }
                 break;

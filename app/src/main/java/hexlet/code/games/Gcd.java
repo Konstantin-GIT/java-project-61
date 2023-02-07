@@ -1,41 +1,29 @@
 package hexlet.code.games;
 
-import hexlet.code.Engine;
-
 import java.util.Random;
-
-import static hexlet.code.Engine.engine;
+import static hexlet.code.Engine.run;
 
 public class Gcd {
     private static final String GAME_DESCRIPTION = "Find the greatest common divisor of given numbers.";
-
     private static final int INDEX_OF_QUESTION = 0;
-
     private static final int INDEX_OF_CORRECT_ANSWER = 1;
-
     private static final int MAX_NUMBER_TO_INTERVAL = 100;
-
     private static final int SIZE_ARRAY_FOR_QUESTIONS_AND_ANSWERS = 2;
+    private static final int NUMBER_OF_ROUND = 3;
 
     public static void startGcdGame() {
-        String[][] questionsAndAnswersOfGame = getQuestionsAndAnswersOfGame(Engine.NUMBER_OF_ROUNDS);
-        engine(GAME_DESCRIPTION, questionsAndAnswersOfGame);
-    }
-
-    public static String[][] getQuestionsAndAnswersOfGame(int numberOfRounds)  {
-        String[][] questionsAndAnswersOfGame = new String[numberOfRounds][SIZE_ARRAY_FOR_QUESTIONS_AND_ANSWERS];
-        Random random = new Random();
-
+        String[][] questionsAndAnswersOfGame = new String[NUMBER_OF_ROUND][SIZE_ARRAY_FOR_QUESTIONS_AND_ANSWERS];
         for (int i = 0; i < questionsAndAnswersOfGame.length; i++) {
-            int numberOneForQuestion = random.nextInt(1, MAX_NUMBER_TO_INTERVAL);
-            int numberTwoForQuestion = random.nextInt(1, MAX_NUMBER_TO_INTERVAL);
-            questionsAndAnswersOfGame[i] = generateRoundData(numberOneForQuestion, numberTwoForQuestion);
+            questionsAndAnswersOfGame[i] = generateRoundData();
         }
-        return questionsAndAnswersOfGame;
+        run(GAME_DESCRIPTION, questionsAndAnswersOfGame);
     }
 
-    private static String[] generateRoundData(int number1, int number2) {
+    private static String[] generateRoundData() {
         String[] questionAndAnswerOfGame = new String[SIZE_ARRAY_FOR_QUESTIONS_AND_ANSWERS];
+        Random random = new Random();
+        int number1 = random.nextInt(1, MAX_NUMBER_TO_INTERVAL);
+        int number2 = random.nextInt(1, MAX_NUMBER_TO_INTERVAL);
         questionAndAnswerOfGame[INDEX_OF_QUESTION] = number1 + " " + number2;
         questionAndAnswerOfGame[INDEX_OF_CORRECT_ANSWER] = Integer.toString(getGreatestCommonDivisor(number1, number2));
         return questionAndAnswerOfGame;

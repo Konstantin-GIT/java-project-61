@@ -1,42 +1,28 @@
 package hexlet.code.games;
 
-
-import hexlet.code.Engine;
-
 import java.util.Random;
-
-import static hexlet.code.Engine.engine;
+import static hexlet.code.Engine.run;
 
 public class Even {
 
     private static final String GAME_DESCRIPTION = "Answer 'yes' if the number is even, otherwise answer 'no'.";
-
     private static final int INDEX_OF_QUESTION = 0;
-
     private static final int INDEX_OF_CORRECT_ANSWER = 1;
-
     private static final int MAX_NUMBER_TO_INTERVAL = 100;
-
     private static final int SIZE_ARRAY_FOR_QUESTIONS_AND_ANSWERS = 2;
-
+    private static final int NUMBER_OF_ROUND = 3;
 
     public static void startEvenGame() {
-        String[][] questionsAndAnswersOfGame = getQuestionsAndAnswersOfGame(Engine.NUMBER_OF_ROUNDS);
-        engine(GAME_DESCRIPTION, questionsAndAnswersOfGame);
-    }
-
-    public static String[][] getQuestionsAndAnswersOfGame(int numberOfRounds) {
-        String[][] questionsAndAnswersOfGame = new String[numberOfRounds][SIZE_ARRAY_FOR_QUESTIONS_AND_ANSWERS];
-        Random random = new Random();
-
+        String[][] questionsAndAnswersOfGame = new String[NUMBER_OF_ROUND][SIZE_ARRAY_FOR_QUESTIONS_AND_ANSWERS];
         for (int i = 0; i < questionsAndAnswersOfGame.length; i++) {
-            int expressionForQuestion = random.nextInt(1, MAX_NUMBER_TO_INTERVAL);
-            questionsAndAnswersOfGame[i] = generateRoundData(expressionForQuestion);
+            questionsAndAnswersOfGame[i] = generateRoundData();
         }
-        return questionsAndAnswersOfGame;
+        run(GAME_DESCRIPTION, questionsAndAnswersOfGame);
     }
 
-    private static String[] generateRoundData(int number) {
+    private static String[] generateRoundData() {
+        Random random = new Random();
+        int number = random.nextInt(1, MAX_NUMBER_TO_INTERVAL);
         String[] questionAndAnswerOfGame = new String[SIZE_ARRAY_FOR_QUESTIONS_AND_ANSWERS];
         questionAndAnswerOfGame[INDEX_OF_QUESTION] = Integer.toString(number);
         questionAndAnswerOfGame[INDEX_OF_CORRECT_ANSWER] = isEven(number) ? "yes" : "no";

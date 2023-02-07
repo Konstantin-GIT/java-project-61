@@ -5,12 +5,10 @@ import java.util.Scanner;
 public class Engine {
 
     public static final int NUMBER_OF_ROUNDS = 3;
-
     private static final int INDEX_OF_QUESTION = 0;
-
     private static final int INDEX_OF_CORRECT_ANSWER = 1;
 
-    public static void engine(String gameDescription, String[][] questionsAndAnswersOfGame) {
+    public static void run(String gameDescription, String[][] questionsAndAnswersOfGame) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("May I have your name?");
         String userName = scanner.next();
