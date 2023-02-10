@@ -11,7 +11,7 @@ public class Calc  {
 
     public static void startCalcGame() {
         String[][] questionsAndAnswersOfGame = new String[NUMBER_OF_ROUND][];
-        for (int i = 0; i < questionsAndAnswersOfGame.length; i++) {
+        for (int i = 0; i < NUMBER_OF_ROUND; i++) {
             questionsAndAnswersOfGame[i] = generateRoundData();
         }
         run(GAME_DESCRIPTION, questionsAndAnswersOfGame);
