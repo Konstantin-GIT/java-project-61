@@ -33,11 +33,7 @@ public class App {
                 break;
             case "3":
                 System.out.println("Your choice: " + numberGame);
-                try {
-                    startCalcGame();
-                } catch (RuntimeException e) {
-                    System.out.println("Start the game again, incorrect execution of the Calculate method");
-                }
+                startCalcGame();
                 break;
             case "4":
                 System.out.println("Your choice: " + numberGame);
