@@ -2,7 +2,6 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 import java.util.Arrays;
-import java.util.Random;
 import static hexlet.code.Engine.run;
 import static hexlet.code.Utils.generateNumber;
 
