@@ -18,7 +18,7 @@ public class Calc  {
     }
 
     private static String[] generateRoundData() {
-        String symbol = symbolSet[generateNumber(0, symbolSet.length)];
+        String symbol = symbolSet[generateNumber(0, symbolSet.length - 1)];
         int number1 = generateNumber(1, MAX_NUMBER_TO_INTERVAL);
         int number2 = generateNumber(1, MAX_NUMBER_TO_INTERVAL);
         String question = number1 + " " + symbol + " " + number2;
