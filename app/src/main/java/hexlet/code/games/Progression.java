@@ -23,7 +23,7 @@ public class Progression {
     }
 
     private static String[] generateRoundData() {
-        int indexHiddenElement = generateNumber(1, SIZE_OF_PROGRESSION);
+        int indexHiddenElement = generateNumber(1, SIZE_OF_PROGRESSION - 1);
         int stepProgression = generateNumber(MIN_VALUE_STEP_OF_PROGRESSION, MAX_VALUE_STEP_OF_PROGRESSION);
         int firstNumberProgression = generateNumber(1, MAX_INITIAL_ELEMENT_OF_PROGRESSION);
         String[] progression = getProgression(firstNumberProgression, stepProgression, SIZE_OF_PROGRESSION);
