@@ -7,7 +7,7 @@
 
 ### Description
 
-Brain-Games - это набор мини-игр, запускаемых из консоли. Данная реализация игр велась в рамках курсов по программированию и выполнения проекта на обучающем ресурсе [Hexlet](https://ru.hexlet.io).
+Brain-Games - this is a set of mini-games launched from the console. This implementation of the games was conducted within the framework of programming courses and project implementation on a training resource [Hexlet](https://ru.hexlet.io).
 
 ### List of games
 
@@ -22,7 +22,7 @@ Brain-Games - это набор мини-игр, запускаемых из к�
 ### Run
 
 ```bash
-$ make run-dist - команда для сборки и запуска проекта из директории App.
+$ make run-dist - the command to build and run the project from the App directory.
 ```
 
 ### Example:

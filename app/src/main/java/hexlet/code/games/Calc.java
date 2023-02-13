@@ -1,30 +1,26 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
-
-import java.util.Random;
-
 import static hexlet.code.Engine.run;
+import static hexlet.code.Utils.generateNumber;
 
 public class Calc  {
-
+    private static String[] symbolSet = {"+", "-", "*"};
     private static final String GAME_DESCRIPTION = "What is the result of the expression?";
     private static final int MAX_NUMBER_TO_INTERVAL = 100;
 
     public static void startCalcGame() {
-        String[][] questionsAndAnswersOfGame = new String[Engine.NUMBER_OF_ROUNDS][];
-        for (int i = 0; i < questionsAndAnswersOfGame.length; i++) {
-            questionsAndAnswersOfGame[i] = generateRoundData();
+        String[][] roundsData = new String[Engine.NUMBER_OF_ROUNDS][];
+        for (int i = 0; i < roundsData.length; i++) {
+            roundsData[i] = generateRoundData();
         }
-        run(GAME_DESCRIPTION, questionsAndAnswersOfGame);
+        run(GAME_DESCRIPTION, roundsData);
     }
 
     private static String[] generateRoundData() {
-        Random random = new Random();
-        String[] symbolSet = {"+", "-", "*"};
-        String symbol = symbolSet[random.nextInt(symbolSet.length)];
-        int number1 = random.nextInt(1, MAX_NUMBER_TO_INTERVAL);
-        int number2 = random.nextInt(1, MAX_NUMBER_TO_INTERVAL);
+        String symbol = symbolSet[generateNumber(1, symbolSet.length)];
+        int number1 = generateNumber(1, MAX_NUMBER_TO_INTERVAL);
+        int number2 = generateNumber(1, MAX_NUMBER_TO_INTERVAL);
         String question = number1 + " " + symbol + " " + number2;
         String answer = Integer.toString(calculate(number1, number2, symbol));
         return new String[] {question, answer};
