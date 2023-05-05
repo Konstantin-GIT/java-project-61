@@ -1,7 +1,7 @@
 
 
 ### Hexlet tests and linter status:
-[![Actions Status](https://github.com/Konstantin-GIT/java-project-61/workflows/hexlet-check/badge.svg)](https://github.com/Konstantin-GIT/java-project-61/actions)
+[![Actions Status](https://github.com/Konstanti[![Maintainability](https://api.codeclimate.com/v1/badges/c98d7895c11357084bfc/maintainability)](https://codeclimate.com/github/Konstantin-GIT/java-project-71/maintainability)n-GIT/java-project-61/workflows/hexlet-check/badge.svg)](https://github.com/Konstantin-GIT/java-project-61/actions)
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/40b901158b904c6d7a1f/maintainability)](https://codeclimate.com/github/Konstantin-GIT/java-project-61/maintainability)
 
