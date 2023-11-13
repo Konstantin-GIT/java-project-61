@@ -1,22 +1,21 @@
 
 
 ### Hexlet tests and linter status:
-[![Actions Status](https://github.com/Konstanti[![Maintainability](https://api.codeclimate.com/v1/badges/c98d7895c11357084bfc/maintainability)](https://codeclimate.com/github/Konstantin-GIT/java-project-71/maintainability)n-GIT/java-project-61/workflows/hexlet-check/badge.svg)](https://github.com/Konstantin-GIT/java-project-61/actions)
+[![Actions Status](https://github.com/Konstantin-GIT/java-project-61/workflows/hexlet-check/badge.svg)](https://github.com/Konstantin-GIT/java-project-61/actions)
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/40b901158b904c6d7a1f/maintainability)](https://codeclimate.com/github/Konstantin-GIT/java-project-61/maintainability)
 
-### Description
+### Welcome to the Brain Games!
 
-Brain-Games - this is a set of mini-games launched from the console. This implementation of the games was conducted within the framework of programming courses and project implementation on a training resource [Hexlet](https://ru.hexlet.io).
+This project helps to train math skills and includes several games such as:
 
-### List of games
+* Even - determination of the parity of a number;
+* Calc - calculation of the result of a mathematical expression;
+* GCD - finding the greatest common divisor;
+* Progression - finding the missing number in an arithmetic progression;
+* Prime - definition of a prime number.
 
-* Greet - greeting of the game.
-* Even - answer "yes" if number even otherwise answer "no".
-* Calc - what is the result of the expression?
-* GCD - find the greatest common divisor of given numbers.
-* Progression - what number is missing in the progression?
-* Prime - answer "yes" if given number is prime. Otherwise answer "no".
+Have a nice game!
 
 
 ### Run
